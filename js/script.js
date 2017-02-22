@@ -325,6 +325,7 @@ var DescriptionModel = function(data) {
   this.description = data[2];//not used
   this.styles = data[3];
   this.background = data[4];
+  this.fontcolor = data[5];
 
 }
 /**
@@ -556,7 +557,7 @@ $(function() {
             }
 	  }
 
-          styleHTML += '#accordion-group' + d_no + '{color:' + description.font + '; background-color:' + description.background + ';} ';
+          styleHTML += '#accordion-group' + d_no + '{color:' + description.fontcolor + '; background-color:' + description.background + ';} ';
 
           accordionHTML +=
             '<div class="accordion-group" id="accordion-group' + d_no + '">' +
