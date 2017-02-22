@@ -325,7 +325,7 @@ var DescriptionModel = function(data) {
   this.description = data[2];//not used
   this.styles = data[3];
   this.background = data[4];
-  this.mojinoiro = data[5];
+  this.mojicolor = data[5];
 
 }
 /**
@@ -558,11 +558,11 @@ $(function() {
 	  }
 
           //styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + '; } ';
-          styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.mojinoiro + '; } ';
+          styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.mojicolor + '; } ';
           accordionHTML +=
             '<div class="accordion-group" id="accordion-group' + d_no + '" >' +
             '<div class="accordion-heading">' +
-            '<a class="accordion-toggle" style="color: ' + description.mojinoiro + '; height:' + accordion_height + 'px" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" >' +
+            '<a class="accordion-toggle" style="color: ' + description.mojicolor + '; height:' + accordion_height + 'px" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" >' +
             '<div class="left-day">' + leftDayText + '</div>' +
             '<div class="accordion-table" >';
           if (ableSVG && SVGLabel) {
