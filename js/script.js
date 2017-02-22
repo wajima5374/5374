@@ -561,7 +561,7 @@ $(function() {
           styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.fcolor + '; } ';
           
 	  accordionHTML +=
-            '.accordion-group{margin-bottom:2px;border:1px solid #ff0000}' +
+            '.accordion-inner{padding:9px 15px;border-top:1px solid #ff0000}.accordion-group{margin-bottom:2px;border:1px solid #ff0000}' +
             '<div class="accordion-group" id="accordion-group' + d_no + '" >' +
             '<div class="accordion-heading">' +
             '<a class="accordion-toggle" style="color: ' + description.fcolor + '; border-color: ' + description.fcolor + '; height:' + accordion_height + 'px" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" >' +
