@@ -556,7 +556,7 @@ $(function() {
             }
 	  }
 
-          styleHTML += '#accordion-group' + d_no + '{background-color:  ' + description.background + ';} ';
+          styleHTML += '#accordion-group' + d_no + '{color:' + description.font + '; background-color:' + description.background + ';} ';
 
           accordionHTML +=
             '<div class="accordion-group" id="accordion-group' + d_no + '">' +
