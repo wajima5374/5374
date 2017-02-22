@@ -557,12 +557,12 @@ $(function() {
             }
 	  }
 
-          styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:#ff0000; } ';
-          //styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.fontcolor + '; } ';
+          //styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + '; } ';
+          styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.fontcolor + '; } ';
           accordionHTML +=
             '<div class="accordion-group" id="accordion-group' + d_no + '" >' +
             '<div class="accordion-heading">' +
-            '<a class="accordion-toggle" style="color: #ff9c00; height:' + accordion_height + 'px" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" >' +
+            '<a class="accordion-toggle" style="color: ' + description.fontcolor + '; height:' + accordion_height + 'px" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" >' +
             '<div class="left-day">' + leftDayText + '</div>' +
             '<div class="accordion-table" >';
           if (ableSVG && SVGLabel) {
