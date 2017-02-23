@@ -559,7 +559,6 @@ $(function() {
 
           //styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + '; } ';
 	  styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.fcolor + '}';
-          styleHTML += '.accordion-inner {border-top:1px solid ' + description.fcolor + '}';
           
           accordionHTML +=
             '<div class="accordion-group" id="accordion-group' + d_no + '" >' +
@@ -577,7 +576,7 @@ $(function() {
             "</a>" +
             "</div>" +
             '<div id="collapse' + i + '" class="accordion-body collapse">' +
-            '<div class="accordion-inner">' +
+            '<div class="accordion-inner" style="border-top:1px solid ' + description.fcolor + ';">' +
             description.description + "<br />" + target_tag +
             '<div class="targetDays"></div></div>' +
             "</div>" +
