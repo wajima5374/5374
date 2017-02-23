@@ -1,6 +1,6 @@
 label,sublabel,description,styles,bgcolor,fcolor
 もえるごみ,,,img/wajima_moeru_black.svg,#fff23f,#424242
 もえないごみ,,,img/wajima_moenai.svg,#de5097,#fff
-資源ごみ,,,img/wajima_shigen_black.svg,#b09dca,#424242
+資源ごみ,,,img/wajima_shigen_black.svg,#b09dca,#151515
 衣類・プラスチックごみ,,,img/wajima_irui_plastic.svg,#80b740,#fff
 金属・皮革ごみ,,,img/wajima_kinzoku_hikaku.svg,#05b3ea,#fff
