@@ -325,8 +325,7 @@ var DescriptionModel = function(data) {
   this.description = data[2];//not used
   this.styles = data[3];
   this.background = data[4];
-  this.fcolor = data[5];
-
+  this.fcolor = data[5];// 20170223 sss3s追加 文字と線の色を変更可能に
 }
 /**
  * ゴミのカテゴリの中のゴミの具体的なリストを管理するクラスです。
@@ -557,13 +556,18 @@ $(function() {
             }
 	  }
 
+          // 20170223 sss3s変更 文字と線の色を変更可能に
           //styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + '; } ';
-	  styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.fcolor + '}';
+          styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.fcolor + '}';
           
           accordionHTML +=
             '<div class="accordion-group" id="accordion-group' + d_no + '" >' +
-            '<div class="accordion-heading">' +
-            '<a class="accordion-toggle" style="color: ' + description.fcolor + '; border-color: ' + description.fcolor + '; height:' + accordion_height + 'px" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" >' +
+            '<div class="accordion-heading">' +	
+	
+            // 20170223 sss3s変更 文字と線の色を変更可能に
+            //'<a class="accordion-toggle" style="height:' + accordion_height + 'px" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '">' +
+            '<a class="accordion-toggle" style="color: ' + description.fcolor + '; height:' + accordion_height + 'px" data-toggle="collapse" data-parent="#accordion" href="#collapse' + i + '" >' +
+            
             '<div class="left-day">' + leftDayText + '</div>' +
             '<div class="accordion-table" >';
           if (ableSVG && SVGLabel) {
@@ -576,7 +580,11 @@ $(function() {
             "</a>" +
             "</div>" +
             '<div id="collapse' + i + '" class="accordion-body collapse">' +
+            
+            // 20170223 sss3s変更 文字と線の色を変更可能に
+            //'<div class="accordion-inner">' +
             '<div class="accordion-inner" style="border-top:1px solid ' + description.fcolor + ';">' +
+            
             description.description + "<br />" + target_tag +
             '<div class="targetDays"></div></div>' +
             "</div>" +
