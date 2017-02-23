@@ -559,10 +559,8 @@ $(function() {
 
           //styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + '; } ';
 	  styleHTML += '#accordion-group' + d_no + '{background-color:' + description.background + ';color:' + description.fcolor + '}';
-          styleHTML += '#accordion-inner' + d_no + '{border-top:1px solid ' + description.fcolor + '}';
+          styleHTML += '.accordion-inner {border-top:1px solid ' + description.fcolor + '}';
           
-	  //accordionHTML +=
-          //  '#legend{border-bottom:1px solid #ff0000}#modal-header{border-bottom:1px solid #ff0000}#accordion-inner{padding:9px 15px;border-top:1px solid #ff0000}#accordion-group{margin-bottom:2px;border:1px solid #ff0000}';
           accordionHTML +=
             '<div class="accordion-group" id="accordion-group' + d_no + '" >' +
             '<div class="accordion-heading">' +
