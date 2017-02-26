@@ -413,11 +413,39 @@ $(function() {
         //例えば第一金曜日のときは、一周ずらしその月だけ第二金曜日にする
         tmp.shift();
         for (var i in tmp) {
-          var row = tmp[i];
+            var row = tmp[i];
 
-          var center = new CenterModel(row);
-          center_data.push(center);
+            //今日の日付を指定 20170227 sss3s追加
+            var today = new Date();
+
+            //休業期間の終了日を指定、あとで比較するためDateオブジェクトに変換 20170227 sss3s追加
+            var endDay = new Date(row[2]);
+
+            //休業期間を過ぎていたらスキップ 20170227 sss3s追加
+            if(today <= endDay){
+                var center = new CenterModel(row);//元々あり
+                center_data.push(center);//元々あり
+            }
         }
+
+        //ゴミ処理センターの並び替え 20170227 sss3s追加
+        //名前（昇順）、休業開始日（降順）
+        center_data.sort(
+            function(a,b){
+                var aName = a["name"];
+                var bName = b["name"];
+                if( aName < bName ) return -1;
+                if (aName > bName) return 1;
+                
+                var astartDate = a["startDate"];
+                var bstartDate = b["startDate"];
+                if (astartDate > bstartDate) return -1;
+                if (astartDate < bstartDate) return 1;
+
+                return 0;
+            }
+        );
+
         //ゴミ処理センターを対応する各地域に割り当てます。
         for (var i in areaModels) {
           var area = areaModels[i];
