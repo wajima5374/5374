@@ -411,12 +411,13 @@ $(function() {
         //表示上は現れませんが、
         //金沢などの各処理センターの休止期間分は一週間ずらすという法則性のため
         //例えば第一金曜日のときは、一周ずらしその月だけ第二金曜日にする
+
+        //今日の日付を指定 20170227 sss3s追加
+        var today = new Date();	
+
         tmp.shift();
         for (var i in tmp) {
             var row = tmp[i];
-
-            //今日の日付を指定 20170227 sss3s追加
-            var today = new Date();
 
             //休業期間の終了日を指定、あとで比較するためDateオブジェクトに変換 20170227 sss3s追加
             var endDay = new Date(row[2]);
