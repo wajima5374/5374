@@ -539,7 +539,7 @@ $(function() {
     accordionHTML +=
 	    '<div id="no-accordion-group"  align="center">' +
             '<a style="height:' + accordion_height + 'px; font-size: 18pt" >' +
-            '<div>' + areaModels[row_index].label + "のごみ収集日</div>" +
+            '<div>' + areaModels[row_index].label + "の収集日</div>" +
             '</a></div>';
 
     //アコーディオンの分類から対応の計算を行います。
