@@ -533,7 +533,15 @@ $(function() {
     }
     var styleHTML = "";
     var accordionHTML = "";
-    //accordionHTML += '<span style="color: #ff0000; font-size: 20pt; text-align: center">' + areaModels[row_index].label + " のごみの日</span>";
+
+    // 20170313 sss3s追加 どの地域を選択したかわかりやすく
+    styleHTML += '#no-accordion-group{background-color:#f2640e; color:#fbfff4; padding:40px 0px;}';
+    accordionHTML +=
+	    '<div id="no-accordion-group"  align="center">' +
+            '<a style="height:' + accordion_height + 'px; font-size: 18pt" >' +
+            '<div>' + areaModels[row_index].label + " ごみの日</div>" +
+            '</a></div>';
+
     //アコーディオンの分類から対応の計算を行います。
     for (var i in areaModel.trash) {
       var trash = areaModel.trash[i];
