@@ -533,6 +533,7 @@ $(function() {
     }
     var styleHTML = "";
     var accordionHTML = "";
+	  accordionHTML += '<span style="color: #ff0000; font-size: 20pt; text-align: center">' + areaModels[row_index].label + " のごみの日</span>";
     //アコーディオンの分類から対応の計算を行います。
     for (var i in areaModel.trash) {
       var trash = areaModel.trash[i];
