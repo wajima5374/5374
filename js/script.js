@@ -535,12 +535,8 @@ $(function() {
     var accordionHTML = "";
 
     // 20170313 sss3s追加 どの地域を選択したかわかりやすく
-    styleHTML += '#no-accordion-group{background-color:#f5f5f5; color:#005098; padding:30px 0px;}';
-    accordionHTML +=
-	    '<div id="no-accordion-group"  align="center">' +
-            '<a style="height:' + accordion_height + 'px; font-size: 18pt" >' +
-            '<div>' + areaModels[row_index].label + "の収集日</div>" +
-            '</a></div>';
+    styleHTML += '#no-accordion-group{background-color:#f5f5f5; color:#004f95; padding:30px 0px; font-size: 18pt;}';
+    accordionHTML += '<div id="no-accordion-group"  align="center">' + areaModels[row_index].label + 'の収集日</div>';
 
     //アコーディオンの分類から対応の計算を行います。
     for (var i in areaModel.trash) {
