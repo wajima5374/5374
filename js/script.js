@@ -605,7 +605,10 @@ $(function() {
             '<div class="left-day">' + leftDayText + '</div>' +
             '<div class="accordion-table" >';
           if (ableSVG && SVGLabel) {
-            accordionHTML += '<img src="' + description.styles + '" alt="' + description.label + '"  />';
+	    // 20170315 sss3s変更 SVGの色を変更可能に ajaxを使用し読み込み index.htmlの最後に追加あり
+	    //accordionHTML += '<img src="' + description.styles + '" alt="' + description.label + '"  />';
+	    accordionHTML += '<div style="fill:' + description.fcolor + '; height:32px;" >';
+	    accordionHTML += '<svg><use xlink:href="#' + description.styles + '" /></svg></div>';
           } else {
             accordionHTML += '<p class="text-center">' + description.label + "</p>";
           }
