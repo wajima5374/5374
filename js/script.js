@@ -90,10 +90,28 @@ var TrashModel = function(_lable, _cell, remarks) {
   var today = new Date();
 
   for (var j in this.dayCell) {
+    //if (this.dayCell[j].length == 1) {
+    //  result_text += "毎週" + this.dayCell[j] + "曜日 ";
+    //} else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
+    //  result_text += "第" + this.dayCell[j].charAt(1) + this.dayCell[j].charAt(0) + "曜日 ";
+    
+    // 20170316 sss3s変更 表示を単純にした
     if (this.dayCell[j].length == 1) {
-      result_text += "毎週" + this.dayCell[j] + "曜日 ";
-    } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) != "*") {
-      result_text += "第" + this.dayCell[j].charAt(1) + this.dayCell[j].charAt(0) + "曜日 ";
+        if (result_text.substr(0, 2) == "毎週") {
+            result_text = result_text.substr(0, result_text.length - 2);
+            result_text += "、" + this.dayCell[j] + "曜日";
+        } else {
+            result_text += "毎週 " + this.dayCell[j] + "曜日";
+        }
+      } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0, 1) != "*") {
+        if (result_text.substr(0, 1) == "第" && result_text.substr(3, 1) == this.dayCell[j].charAt(0)) {
+            result_text = result_text.substr(0, result_text.length - 3);
+            result_text += "、第" + this.dayCell[j].charAt(1) + " " + this.dayCell[j].charAt(0) + "曜日";
+        } else {
+            result_text += "第" + this.dayCell[j].charAt(1) + " " + this.dayCell[j].charAt(0) + "曜日";
+        }
+    
+    
     } else if (this.dayCell[j].length == 2 && this.dayCell[j].substr(0,1) == "*") {
     } else if (this.dayCell[j].length == 10 && this.dayCell[j].substr(0,1) == "隔") {
       /**** MOD: PICK biweek, Ex:隔月20140401 ****/
@@ -535,8 +553,11 @@ $(function() {
     var accordionHTML = "";
 
     // 20170314 sss3s追加 どの地域を選択したかわかりやすく
-    styleHTML += '#no-accordion{background-color:#f5f5f5; color:#005098; padding:25px 0px; font-size: 18pt;}';
-    accordionHTML += '<div id="no-accordion"  align="center">' + areaModels[row_index].label + 'の収集日</div>';
+    //styleHTML += '#no-accordion{background-color:#f5f5f5; color:#005098; padding:25px 0px; font-size: 18pt;}';
+    var arealabel = areaModels[row_index].label;
+    styleHTML += '#no-accordion{background-color:#ffffff; color:#ff8282; padding:25px 0px; font-size: 18pt;}';
+    accordionHTML += '<div id="no-accordion"? align="center">' + arealabel.substr(2, arealabel.length - 2) + 'の収集日</div>';
+
 
     //アコーディオンの分類から対応の計算を行います。
     for (var i in areaModel.trash) {
@@ -605,7 +626,7 @@ $(function() {
             '<div class="left-day">' + leftDayText + '</div>' +
             '<div class="accordion-table" >';
           if (ableSVG && SVGLabel) {
-            accordionHTML += '<img src="' + description.styles + '" alt="' + description.label + '"  />';
+            accordionHTML += '<img src="' + description.styles + '" alt="' + description.label + '"? />';
 
           } else {
             accordionHTML += '<p class="text-center">' + description.label + "</p>";
